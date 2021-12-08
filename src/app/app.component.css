@@ -1,0 +1,16 @@
+body{
+    margin:0;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('../assets/todobg.jpg') center no-repeat;
+    height: 100vh;
+    margin:0;
+
+}
+

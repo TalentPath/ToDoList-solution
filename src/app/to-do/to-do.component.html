@@ -1,0 +1,16 @@
+<h2>{{name}}'s ToDo List</h2>
+<input #todo (keyup.enter)="addItem(todo.value)" required>
+<button (click)="addItem(todo.value)">Add Item</button>
+
+<ul>
+  <li *ngFor="let item of toDoList">
+    <input type="checkbox" (change)="completeItem(item)">
+    <span *ngIf="item.edit==false" [ngClass]="item.completed?'completed':''">{{item.todo}} <button (click)="editTodo(item)">Edit</button></span>
+    <span *ngIf="item.edit==true">
+      <input #updateTodo  (keyup.enter)="updateItem(updateTodo.value,item)" value="{{item.todo}}"><button (click)="updateItem(updateTodo.value, item)">Update</button>
+    </span>
+    
+    <button (click)="deleteTodo(item)" class="delete">Delete</button>
+  </li>
+</ul>
+

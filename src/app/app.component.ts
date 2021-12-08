@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-app';
+  name:string="Terra";
+  todo:string="";
+  toDoList:{todo:string, completed:boolean}[]=[]
+  showData:boolean = false;
+
+    addItem(item:string){
+      this.toDoList.push({todo:item, completed:true});
+    }
+
+    showInfo(){
+      this.showData=true;
+      console.log(this.showData);
+    }
 }
